@@ -25,6 +25,7 @@ const handler = (request, response) => {
         option2: question.option2,
         option3: question.option3,
         option4: question.option4,
+        correctAnswer: question.correctAnswer,
       }));
       console.log(allQuestionsWithCorrectAnswers);
       //   Models.likebooks.destroy({ truncate: true });
