@@ -20,19 +20,15 @@ const handler = (request, response) => {
       }
       const allQuestionsWithCorrectAnswers = allTheQuestions.allQuestions.map(question => ({
         question: question.question,
-        questionId: question.questionId,
-        option1: question.option1,
-        option2: question.option2,
-        option3: question.option3,
-        option4: question.option4,
-        correctAnswer: question.correctAnswer,
+        qid: question.questionId,
+        correctAns: question.correctAnswer,
       }));
       console.log(allQuestionsWithCorrectAnswers);
-      //   Models.likebooks.destroy({ truncate: true });
-      //   Models.likebooks.bulkCreate(allQuestionsWithCorrectAnswers).then((data) => {
-      //     response(data);
-      //   });
-      response(allQuestionsWithCorrectAnswers);
+      Models.questions.destroy({ truncate: true });
+      Models.questions.bulkCreate(allQuestionsWithCorrectAnswers).then((data2) => {
+        response(data2);
+      });
+    //   response(allQuestionsWithCorrectAnswers);
     });
   });
 };
