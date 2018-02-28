@@ -7,8 +7,9 @@ const answerApi = require('./answerApi');
 const userWithAns = require('./userWithAns');
 const leaderBoard = require('./leaderBoard');
 const calculateScore = require('./calculateScore');
+const persist = require('./persist');
 
 module.exports = [].concat(
   getQuesAndStoreInDb, storeOptions, readDb, user,
-  answerApi, userWithAns, leaderBoard, calculateScore,
+  answerApi, userWithAns, leaderBoard, calculateScore, persist,
 );
