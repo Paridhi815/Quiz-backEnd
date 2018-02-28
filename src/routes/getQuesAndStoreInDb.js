@@ -23,7 +23,7 @@ const handler = (request, response) => {
         qid: question.questionId,
         correctAns: question.correctAnswer,
       }));
-      console.log(allQuestionsWithCorrectAnswers);
+      //   console.log(allQuestionsWithCorrectAnswers);
       Models.questions.destroy({ truncate: true });
       Models.questions.bulkCreate(allQuestionsWithCorrectAnswers).then((data2) => {
         response(data2);

@@ -24,7 +24,7 @@ const handler = (request, response) => {
       }));
     });
     Promise.all(optionsPromises).then(() => {
-      console.log(questionsWithOptions);
+    //   console.log(questionsWithOptions);
       response(questionsWithOptions);
     });
 

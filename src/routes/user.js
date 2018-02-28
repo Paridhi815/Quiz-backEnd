@@ -1,7 +1,8 @@
 const Models = require('../../models');
 
 const handler = (request, response) => {
-  const { name } = request.payload;
+  const name = request.payload.user;
+  console.log('bjdcdhw', request.payload);
   Models.quizzers.count({
     where: {
       quizzer: name,
