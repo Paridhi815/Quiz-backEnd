@@ -6,17 +6,17 @@ const handler = (request, response) => {
   const selectedOption = request.payload.selectedOption;
   Models.userwithans.count({
     where: {
-      quizzer: userName,
+      qid,
     },
   }).then((count) => {
     if (count !== 0) {
       Models.userwithans.update({
-        quizzer: username,
+        quizzer: userName,
         qid,
         selectedoption: selectedOption,
       }, {
         where: {
-          quizzer: userName,
+          qid,
         },
       });
     } else {
